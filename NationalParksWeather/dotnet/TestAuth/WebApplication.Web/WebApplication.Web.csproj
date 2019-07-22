@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UseRazorBuildServer>false</UseRazorBuildServer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\etc\NationalParkGeek\img\backpack.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\backpack2.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\geek.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\logo.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\cvnp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\enp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\gcnp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\gnp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\gsmnp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\gtnp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\mrnp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\rmnp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\ynp.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\parks\ynp2.jpg" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\scenery.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\weather\cloudy.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\weather\partlycloudy.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\weather\rain.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\weather\snow.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\weather\sunny.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\img\weather\thunderstorms.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\National Park Weather Service.pdf" />
+    <None Include="wwwroot\etc\NationalParkGeek\npgeek.sql" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeek-wireframe.md" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeek-wireframe.pdf" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeekdetail.ai" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeekdetail.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeekfavoritepark.ai" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeekfavoritepark.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeekhome.ai" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeekhome.png" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeeksurvey.ai" />
+    <None Include="wwwroot\etc\NationalParkGeek\wireframe\npgeeksurvey.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+  </ItemGroup>
+
+</Project>

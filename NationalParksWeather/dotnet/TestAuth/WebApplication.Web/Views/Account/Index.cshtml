@@ -1,0 +1,42 @@
+﻿@model IList<SurveyAggregateViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Top Parks</h2>
+
+<p>Welcome @Model[0].username! Here are our top rated National Parks...</p>
+
+<div class="surveyResults container-fluid">
+    <div class="row">
+        @{string sceneryFilePath = ("\\etc\\NationalParkGeek\\img\\scenery.png");
+        }
+        <div class="col-lg-4 resultParkImage">
+            <img class=".store" src=@sceneryFilePath />
+        </div>
+        <div class="resultParkTitle col-lg-4" style="font-size: larger">Park Name</div>
+        <div class="resultParkCount col-lg-4"><strong>Votes</strong></div>
+    </div>
+</div>
+
+@{ foreach (SurveyAggregateViewModel savm in Model)
+
+    {
+        <div class="surveyResults container-fluid">
+            <div class="row">
+                @{string filePath = ($"\\etc\\NationalParkGeek\\img\\parks\\{savm.parkCode.ToLower()}.jpg");
+                }
+                <div class="col-lg-4 resultParkImage">
+                    <a asp-controller="Home" asp-action="Detail" asp-route-code=@savm.parkCode>
+                        <img class=".store" src=@filePath />
+                    </a>
+                </div>
+                <div class="resultParkTitle col-lg-4">@savm.parkName</div>
+                <div class="resultParkCount col-lg-4"><strong>@savm.count</strong></div>
+            </div>
+        </div>
+    }
+}
+
+
+

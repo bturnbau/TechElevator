@@ -1,0 +1,271 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 35px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+
+.parkGrid {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: "p-image parkTitle" "p-image parkText" "p-image parkText";
+    grid-template-columns: 1fr 1fr;
+    background-color: #D1E6D6;
+}
+
+    .parkGrid > div {
+        padding: 15px;
+    }
+
+.p-image {
+    grid-area: p-image;
+}
+
+    .p-image img {
+        width: 50vw;
+        object-fit: cover;
+    }
+
+.parkTitle {
+    grid-area: parkTitle;
+    vertical-align: middle;
+}
+
+.parkText {
+    grid-area: parkText;
+}
+
+.detail-image img {
+    display: block;
+    margin: auto;
+    border: none;
+    width: 60%;
+    
+}
+
+.park-detail {
+    background-color: #D1E6D6;
+    padding: 20px;
+}
+
+#parkDescription {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.quote {
+    text-align: center;
+    padding: 10px;
+    background-color: #AEC6B4;
+    border-radius: 15px;
+}
+
+hr {
+    background-color: black;
+    width: 60%;
+    height: 1px;
+    color: black;
+    border: 0 none;
+}
+
+.parkStats {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .parkStats > p {
+    }
+
+/*the div that holds all weather readouts by day (dailyWeather)*/
+.parkWeather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .parkWeather > div {
+        width: 200px;
+        height: 300px;
+        margin: 1em;
+        vertical-align: middle;
+        background-color: white;
+        padding: 8px;
+        transition: all 0.3s ease-in-out;
+        border-radius: 15px;
+    }
+
+.dailyWeather:hover {
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.Absolute-Center {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+    .Absolute-Center.is-Responsive {
+        width: 50%;
+        height: 50%;
+        min-width: 200px;
+        max-width: 400px;
+        padding: 40px;
+    }
+
+
+#pageContainer {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+.surveyContent {
+    padding-top: 30px;
+}
+
+/*the bar that holds the readout for each park result from the survey*/
+.surveyResults {
+    display: flex;
+    height: 140px;
+    background-color: #D1E6D6;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+}
+.row {
+    width: 100%;
+    margin: 0;
+}
+
+    .surveyResults > div {
+        display: flex;
+        flex-direction: row;
+      
+    }
+    .resultParkImage{
+        width: 170px;
+       
+    }
+.resultParkTitle {
+    width: 500px;
+    padding-left: 20%;
+    padding-top: 30px;
+}
+.resultParkCount {
+    width: 50px;
+    padding-left: 10%;
+    padding-top: 30px;
+
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+/* The slider */
+.slider {
+    position: relative;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+.navbar {
+    background-image: url("\\etc\\NationalParkGeek\\img\\TheFinalBannerToEndAllBanners.png");
+    height: 190px;
+    vertical-align: middle;
+    
+}
+    .navbar > img {
+        object-fit: cover;
+    }

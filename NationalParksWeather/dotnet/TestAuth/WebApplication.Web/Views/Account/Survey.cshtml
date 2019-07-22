@@ -1,0 +1,49 @@
+﻿@model SurveyViewModel
+
+@{
+    ViewData["Title"] = "Survey";
+}
+<div id="pageContainer">
+    <div id="content-wrap">
+        <h2>Rate Your Favorite Park!</h2>
+        <div></div>
+        <p>Select a park you've visited, your experience there, and your info to help us gather information on our parks.</p>
+        <div class="surveyContent">
+            <form asp-controller="Account" asp-action="Survey">
+
+                <div id="surveyPark">
+                    <label asp-for="parkCode"> Choose a Park</label>
+                    <select asp-for="parkCode" asp-items="Model.Parks"></select>
+                    <span asp-validation-for="parkCode"></span>
+                    <span asp-validation-for="@Model.Parks"></span>
+                </div><br />
+
+                <div id="surveyEmail">
+                    <label asp-for="email">Email</label>
+                    <input asp-for="email" />
+                    <span asp-validation-for="email"></span>
+                </div><br />
+
+                      <div id="surveyState">
+                          <label asp-for="state">State of Residence</label>
+                          <select asp-for="state" asp-items="Model.States"></select>
+                          <span asp-validation-for="state"></span>
+                          <span asp-validation-for="@Model.States"></span>
+                      </div><br />
+
+                <div id="surveyRatings">
+                    <label>Choose a Rating</label><br />
+                    <input asp-for="activityLevel" type="radio" value="Very Low" /> Very Low<br>
+                    <input asp-for="activityLevel" type="radio" value="Low" />Low<br>
+                    <input asp-for="activityLevel" type="radio" value="Moderate" />Moderate<br>
+                    <input asp-for="activityLevel" type="radio" value="High" />High<br>
+                    <input asp-for="activityLevel" type="radio" value="Very High" />Very High<br>
+                    <span asp-validation-for="activityLevel"></span>
+                </div><br />
+
+                <button type="submit" class="btn">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>

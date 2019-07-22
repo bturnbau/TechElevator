@@ -1,0 +1,28 @@
+﻿@model IList<Park>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+    @foreach (Park park in Model)
+    {
+        <div class="parkGrid">
+            @{string filePath = ($"\\etc\\NationalParkGeek\\img\\parks\\{park.parkCode.ToLower()}.jpg");
+            }
+            <a class="p-image" asp-controller="Home" asp-action="Detail" asp-route-code=@park.parkCode asp-route-isFarenheit="true">
+                <img class=".store" src=@filePath />
+            </a>
+        
+        <div class="parkTitle">
+            <h2>@park.parkName</h2>
+        </div>
+        <div class="parkText">
+            <h4>@park.state</h4>
+            <p>@park.parkDescription</p>
+        </div>
+    </div>
+    }
+
+
+

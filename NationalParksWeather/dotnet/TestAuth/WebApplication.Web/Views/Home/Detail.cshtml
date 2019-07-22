@@ -1,0 +1,102 @@
+
+@model DetailViewModel
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+
+<div class="park-detail">
+    @{string filePath = ($"\\etc\\NationalParkGeek\\img\\parks\\{Model.park.parkCode.ToLower()}.jpg");
+
+
+    }
+
+    <div class="detail-image">
+        <a asp-controller="Home" asp-action="Index" asp-route-id=@Model.park.parkCode>
+            <img src=@filePath />
+        </a>
+    </div>
+
+    <div class="product-description">
+        <h3>
+            @Model.park.parkName | @Model.park.state
+        </h3>
+        <div id="parkDescription">@Model.park.parkDescription</div>
+
+        <div class="quote">
+            <h4><i>"@Model.park.inspirationalQuote"</i></h4>
+            <h4> - @Model.park.inspirationalQuoteSource</h4>
+        </div>
+        <hr>
+        <div class="parkStats">
+            <p id="founded"><strong>Founded in:</strong> @Model.park.yearFounded</p>
+            <p id="numCampsites"><strong>Number of Campsites:</strong> @Model.park.numberofCampsites</p>
+            <p id="trailMiles"><strong>Total Trail Miles:</strong> @Model.park.milesofTrail miles</p>
+            <p id="numAnimals"><strong>Number of Animal Species:</strong> @Model.park.numberofAnimalSpecies</p>
+            <p id="acreage"><strong>Acreage:</strong>  @String.Format("{0:n0}", Model.park.acreage) acres</p>
+            <p id="climate"><strong>Climate:</strong> @Model.park.climate</p>
+            <p id="elevation"><strong>Elevation:</strong> @Model.park.elevation feet</p>
+            <p id="numVisitors"><strong>Average Number of Visitors per Year:</strong> @String.Format("{0:n0}", Model.park.annualVisitorCount)</p>
+            <p id="fee"><strong>Entry Fee:</strong> $@Model.park.entryFee</p>
+        </div>
+        <hr>
+        <a asp-controller="Home" asp-action="Detail" asp-route-code=@Model.park.parkCode asp-route-isFarenheit="@Model.isFarenheit" asp-route-isSwitch="true">
+            <div>Toggle Temperature</div>
+        </a>
+        <div class="parkWeather">
+            @{DateTime today = DateTime.Now;}
+            @{for (int i = 0; i < 5; i++)
+                {
+                    string newForecast = Model.weathers[i].forecast.Replace(" ", string.Empty);
+
+                    string weatherImagePath = ($"\\etc\\NationalParkGeek\\img\\weather\\{newForecast}.png");
+            <div class="dailyWeather">
+                @{if (i == 0)
+                    {<div id="fiveDayValue">Today</div>}
+                    else
+                    {<div id="fiveDayValue"> @today.ToShortDateString() </div> }
+                }
+
+                <div id="weather-image">
+                    <img src=@weatherImagePath />
+                </div>
+                <div id="forecast"><strong>Forecast:</strong> @Model.weathers[i].forecast</div>
+                @{
+
+                    if (Model.isFarenheit)
+
+                    {
+                 
+                        <div id="high"><strong>High:</strong> @String.Format("{0}\u00B0 F", Model.weathers[i].CalculateTemp(Model.isFarenheit, true))</div>
+                        <div id="low"><strong>Low:</strong> @String.Format("{0}\u00B0 F", Model.weathers[i].CalculateTemp(Model.isFarenheit, false))</div>
+
+                    }
+
+                    else
+                    {
+                   
+                        <div id="high"><strong>High:</strong> @String.Format("{0}\u00B0 C", Model.weathers[i].CalculateTemp(Model.isFarenheit, true))</div>
+                        <div id="low"><strong>Low:</strong> @String.Format("{0}\u00B0 C", Model.weathers[i].CalculateTemp(Model.isFarenheit, false))</div>
+                    }
+
+
+                }
+
+            </div>
+                    today = today.AddDays(1.0);
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
